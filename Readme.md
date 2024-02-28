@@ -4,7 +4,11 @@
     mkdir -p ~/Floor_cleaner_ws/src
     cd ~/Floor_cleaner_ws/src
     git clone {this branch}
-    pip3 install shapely
+### Dependency installation
+    sudo apt install ros-noetic-grid-map-ros ros-noetic-grid-map-core ros-noetic-grid-map-rviz-plugin ros-noetic-grid-map-visualization ros-noetic-move-base-flex
+#### Download full_coverage_path_planner and tracking_pid from git and place it in ~/Floor_cleaner_ws/src  
+    https://github.com/nobleo/full_coverage_path_planner
+    https://github.com/nobleo/tracking_pid.git
 
 ### Build
     cd ~/Floor_cleaner_ws
@@ -16,12 +20,5 @@
 ### Cleaning complete map
     roslaunch robot_navigation cleaning.launch
 
-### planner testing
-To test the planner first set segment to be cleaned using publish point function in rviz to select segment polygon
-and run planner_tester.py in robot_global_planner/scripts
-
-### segment for planning
-![plot](./data/Figure_0.png)
-
-### created plan
-![plot](./data/Figure_1.png)
+### demo 
+![Demo](/data/house_cleaner_bot.gif)
